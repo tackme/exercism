@@ -1,15 +1,13 @@
 def convert(number):
-    reslut = []
+    reslut = ''
+
     if number % 3 == 0:
-        reslut.append("Pling")
+        reslut += 'Pling'
     if number % 5 == 0:
-        reslut.append("Plang")
+        reslut += 'Plang'
     if number % 7 == 0:
-        reslut.append("Plong")
-    if not reslut:
-        reslut.append(str(number))
+        reslut += 'Plong' 
+    if reslut:
+        return reslut
     
-    reslut_str = ''.join(reslut)
-
-    return reslut_str
-
+    return str(number)
