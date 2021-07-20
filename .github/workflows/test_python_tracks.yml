@@ -31,7 +31,7 @@ jobs:
       - name: test
         run: |
           pytest python/**/*_test.py
-        name: auto_review_assign
+      - name: Review Assing
         uses: hkusu/review-assign-action@v0.1.0
         with:
           assignees: ${{ github.actor }}
