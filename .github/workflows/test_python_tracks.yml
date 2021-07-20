@@ -31,10 +31,8 @@ jobs:
       - name: test
         run: |
           pytest python/**/*_test.py
-  assign:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: hkusu/review-assign-action@v0.1.0
+        name: auto_review_assign
+          uses: hkusu/review-assign-action@v0.1.0
         with:
           assignees: ${{ github.actor }}
           reviewers: skr19930617
