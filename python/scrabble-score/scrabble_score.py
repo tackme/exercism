@@ -1,6 +1,6 @@
 def score(word: str):
     letter_list = list(word.lower())
-    
+
     count = 0
 
     for l in letter_list:
