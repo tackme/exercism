@@ -1,22 +1,34 @@
+from enum import Enum
+
+class Score(Enum):
+    A = 1
+    E = 1
+    I = 1
+    O = 1
+    U = 1
+    L = 1
+    N = 1
+    R = 1
+    S = 1
+    T = 1
+    D = 2
+    G = 2
+    B = 3
+    C = 3
+    M = 3
+    P = 3
+    F = 4
+    H = 4
+    V = 4
+    W = 4
+    Y = 4
+    K = 5
+    J = 8
+    X = 8
+    Q = 10
+    Z = 10
+
 def score(word: str):
-    letter_list = list(word.lower())
+    letter_list = list(word.upper())
 
-    count = 0
-
-    for l in letter_list:
-        if l in ("a", "e", "i", "o", "u", "l", "n", "r", "s", "t"):
-            count += 1
-        elif l in ("d", "g"):
-            count += 2
-        elif l in ("b", "c", "m", "p"):
-            count += 3
-        elif l in ("f", "h", "v", "w", "y"):
-            count += 4
-        elif l == "k":
-            count += 5
-        elif l in ("j", "x"):
-            count += 8
-        elif l in ("q", "z"):
-            count += 10
-
-    return count
+    return sum(Score[l].value for l in letter_list)
