@@ -1,11 +1,4 @@
-import re
-
 def abbreviate(words):
-    word_l = re.findall("([a-zA-Z0-9]+(?:'[a-zA-Z0-9])?)", words.title())
+    plain = "".join(w for w in words if w.isalpha() or w.isspace() or w == "-")
 
-    result = ""
-
-    for word in word_l:
-        result += word[0]
-
-    return result
+    return "".join(l for l in plain.title() if l.isalpha() and l.isupper())
