@@ -29,6 +29,4 @@ class Score(Enum):
     Z = 10
 
 def score(word: str):
-    letter_list = list(word.upper())
-
-    return sum(Score[l].value for l in letter_list)
+    return sum(Score[l].value for l in word.upper())
