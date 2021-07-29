@@ -4,12 +4,12 @@ class School:
 
     def add_student(self, name, grade):
         self.data.append({"Name": name, "Grade": grade})
-        self.data = sorted(self.data, key=lambda k: (k["Grade"], k["Name"]))
+        self.data = sorted(self.data, key=lambda x: (x["Grade"], x["Name"]))
 
     def roster(self):
-        l_data = [k["Name"] for k in self.data]
-        return l_data
+        names = [d["Name"] for d in self.data]
+        return names
 
     def grade(self, grade_number):
-        l_data = [k["Name"] for k in self.data if k["Grade"] == grade_number]
-        return l_data
+        names = [d["Name"] for d in self.data if d["Grade"] == grade_number]
+        return names
