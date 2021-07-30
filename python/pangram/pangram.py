@@ -1,4 +1,4 @@
 def is_pangram(sentence):
-    sentence = "".join(c.lower() for c in sentence if c.isalpha())
+    plain = "".join(c.lower() for c in sentence if c.isalpha())
 
-    return len(set(sentence)) == 26
+    return len(set(plain)) == 26
