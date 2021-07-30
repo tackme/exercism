@@ -1,17 +1,15 @@
-def is_valid(isbn):
-    # Make number list(with alphabet)
-    numbers = list(isbn.replace('-', ''))
+import re
 
-    # Exclude wrong length list
-    if len(numbers) != 10:
+def is_valid(isbn):
+    # Validate isbn
+    if re.fullmatch(r"[0-9]{9}[0-9X]", isbn.replace('-', '')):
+        numbers = list(isbn.replace('-', ''))
+    else:
         return False
 
     # Convert X to 10
     if numbers[-1] == 'X':
         numbers[-1] = '10'
 
-    # Return bool (with exception)
-    try:
-        return sum(int(l) * (10 - index) for index, l in enumerate(numbers)) % 11 == 0
-    except ValueError:
-        return False
+    # Return bool
+    return sum(int(l) * (10 - index) for index, l in enumerate(numbers)) % 11 == 0
