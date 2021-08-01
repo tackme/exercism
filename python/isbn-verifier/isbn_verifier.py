@@ -1,10 +1,10 @@
 import re
 
 def is_valid(isbn):
+    numbers = list(isbn.replace('-', ''))
+
     # Validate isbn
-    if re.fullmatch(r"[0-9]{9}[0-9X]", isbn.replace('-', '')):
-        numbers = list(isbn.replace('-', ''))
-    else:
+    if not re.fullmatch(r"[0-9]{9}[0-9X]", numbers):
         return False
 
     # Convert X to 10
