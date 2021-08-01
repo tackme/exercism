@@ -1,3 +1,5 @@
+from more_itertools import chunked
+
 class Garden:
     PLANTS = {
             "G" : "Grass",
@@ -22,12 +24,13 @@ class Garden:
                 "Kincaid",
                 "Larry"
                 ]
-        self.garden = [list(l) for l in diagram.split()]
+        garden = [list(l) for l in diagram.split()]
+        self.garden = [list(chunked(l, 2)) for l in garden]
         self.students = sorted(students)
 
     def plants(self, name):
-        index = self.students.index(name) * 2
+        index = self.students.index(name)
 
-        pots = self.garden[0][index:index+2] + self.garden[1][index:index+2]
+        pots = self.garden[0][index] + self.garden[1][index]
 
         return [self.PLANTS[l] for l in pots]
