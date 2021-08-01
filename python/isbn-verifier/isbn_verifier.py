@@ -6,8 +6,8 @@ def is_valid(isbn):
     # Validate isbn
     if not re.fullmatch(r"[0-9]{9}[0-9X]", numbers):
         return False
-    else:
-        num_list = list(numbers)
+
+    num_list = list(numbers)
 
     # Convert X to 10
     if num_list[-1] == 'X':
