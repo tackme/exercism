@@ -5,11 +5,14 @@ def response(hey_bob):
 
     if not plain:
         return "Fine. Be that way!"
-    elif plain.isupper() and plain.endswith("?"):
+
+    if plain.isupper() and plain.endswith("?"):
         return "Calm down, I know what I'm doing!"
-    elif plain.isupper():
+
+    if plain.isupper():
         return "Whoa, chill out!"
-    elif plain.endswith("?"):
+
+    if plain.endswith("?"):
         return "Sure."
-    else:
-        return "Whatever."
+
+    return "Whatever."
