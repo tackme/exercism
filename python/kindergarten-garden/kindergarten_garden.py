@@ -25,12 +25,13 @@ class Garden:
                 "Larry"
                 ]
         garden = [list(l) for l in diagram.split()]
-        self.garden = [list(chunked(l, 2)) for l in garden]
+        chunked_garden = [chunked(l, 2) for l in garden]
+        self.transeposed = [list(l) for l in zip(*chunked_garden)]
         self.students = sorted(students)
 
     def plants(self, name):
         index = self.students.index(name)
 
-        pots = self.garden[0][index] + self.garden[1][index]
+        flatten_garden = sum(self.transeposed[index], [])
 
-        return [self.PLANTS[l] for l in pots]
+        return list(map(self.PLANTS.get, flatten_garden))
