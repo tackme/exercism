@@ -15,8 +15,7 @@ class MeetupDayException(Exception):
     pass
 
 def meetup(year, month, week, day_of_week):
-    cal = calendar.Calendar()
-    aaa = [l[days.get(day_of_week)] for l in cal.monthdayscalendar(year, month) if l[days.get(day_of_week)] != 0]
+    aaa = [l[days.get(day_of_week)] for l in calendar.monthcalendar(year, month) if l[days.get(day_of_week)] != 0]
 
     if week == "teenth":
         bbb = [l for l in aaa if 12 < l < 20][0]
@@ -29,5 +28,5 @@ def meetup(year, month, week, day_of_week):
     try:
         bbb = int(week[0]) - 1
         return date(year, month, aaa[bbb])
-    except IndexError:
-        raise MeetupDayException("invalid index")
+    except IndexError as e:
+        raise MeetupDayException("invalid index") from e
