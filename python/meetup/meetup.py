@@ -15,18 +15,17 @@ class MeetupDayException(Exception):
     pass
 
 def meetup(year, month, week, day_of_week):
-    aaa = [l[days.get(day_of_week)] for l in calendar.monthcalendar(year, month) if l[days.get(day_of_week)] != 0]
+    column = [l[days.get(day_of_week)] for l in calendar.monthcalendar(year, month) if l[days.get(day_of_week)] != 0]
 
     if week == "teenth":
-        bbb = [l for l in aaa if 12 < l < 20][0]
-        print(bbb)
-        return date(year, month, bbb)
+        teenth_day = [l for l in column if 12 < l < 20][0]
+        return date(year, month, teenth_day)
 
     if week == "last":
-        return date(year, month, aaa[-1])
+        return date(year, month, column[-1])
 
     try:
-        bbb = int(week[0]) - 1
-        return date(year, month, aaa[bbb])
+        index = int(week[0]) - 1
+        return date(year, month, column[index])
     except IndexError as e:
         raise MeetupDayException("invalid index") from e
