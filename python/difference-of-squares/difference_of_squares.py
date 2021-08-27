@@ -1,9 +1,9 @@
 def square_of_sum(number):
-    return sum(num for num in range(number + 1)) ** 2
+    return (number * (number + 1) / 2) ** 2
 
 
 def sum_of_squares(number):
-    return sum(num ** 2 for num in range(number + 1))
+    return number * (number + 1) * (2 * number + 1) / 6
 
 
 def difference_of_squares(number):
