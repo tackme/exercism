@@ -28,4 +28,4 @@ def meetup(year, month, week, day_of_week):
         index = int(week[0]) - 1
         return date(year, month, column[index])
     except IndexError as e:
-        raise MeetupDayException("invalid index") from e
+        raise MeetupDayException(f"{week.title()} {day_of_week} is in {month}.{year} ") from e
