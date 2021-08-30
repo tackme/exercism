@@ -11,7 +11,13 @@ ALLERGEN_TABLE = [
 
 class Allergies:
     def __init__(self, score):
-        self.allergens = [ALLERGEN_TABLE[i] for i in range(8) if score >> i & 1]
+        self.allergens = []
+
+        for i, l in enumerate(ALLERGEN_TABLE):
+            if score >> i & 1:
+                self.allergens.append(l)
+                if i > 6:
+                    break
 
     def allergic_to(self, item):
         return item in self.allergens
