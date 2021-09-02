@@ -31,7 +31,7 @@ def letter_grades(highest):
     '''
     threshold = 41
 
-    return [l for l in range(threshold, highest, round((highest - threshold) / 4))]
+    return list(range(threshold, highest, round((highest - threshold) / 4)))
 
 def student_ranking(student_scores, student_names):
     '''
