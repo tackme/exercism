@@ -24,9 +24,6 @@ class Protein(Enum):
 def proteins(strand):
     chunked_strand = ["".join(chunk) for chunk in chunked(strand, 3)]
 
-    print(chunked_strand)
-    print(Protein["AUG"].value)
-
     result = []
 
     for chunk in chunked_strand:
