@@ -10,6 +10,7 @@ def add_prefix_un(word):
 
     return "un" + word
 
+
 def make_word_groups(vocab_words):
     '''
 
@@ -22,10 +23,11 @@ def make_word_groups(vocab_words):
      by ' :: '.
     '''
 
-    word_group = [vocab_words[0]] + [vocab_words[0] + l for l in vocab_words[1:]]
+    prefix = vocab_words[0]
+
+    word_group = [prefix, *[prefix + word for word in vocab_words[1:]]]
 
     return " :: ".join(word_group)
-
 
 
 def remove_suffix_ness(word):
