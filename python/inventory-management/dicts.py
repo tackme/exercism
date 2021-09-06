@@ -20,9 +20,7 @@ def add_items(inventory: dict, items: list) -> dict:
     '''
 
     for item in items:
-        if item not in inventory:
-            inventory[item] = 1
-            continue
+        inventory[item] = inventory.get(item, 0)
         inventory[item] += 1
 
     return inventory
@@ -39,7 +37,6 @@ def delete_items(inventory: dict, items: list) -> dict:
     for item in items:
         if inventory[item] > 0:
             inventory[item] -= 1
-            continue
 
     return inventory
 
