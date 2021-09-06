@@ -36,7 +36,9 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
 
     generated_power = voltage * current
 
-    percentage = (generated_power/ theoretical_max_power) * 100
+    percentage = (generated_power / theoretical_max_power) * 100
+
+    efficiency_band = None
 
     if percentage < 30:
         efficiency_band = "black"
@@ -51,7 +53,6 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
 
 def fail_safe(temperature, neutrons_produced_per_second, threshold):
     '''
-
     :param temperature:
     :param neutrons_produced_per_second:
     :param threshold:
@@ -61,6 +62,8 @@ def fail_safe(temperature, neutrons_produced_per_second, threshold):
     - `temperature * neutrons per second` +/- 10% of `threshold` == 'NORMAL'
     - `temperature * neutron per second` is not in the above-stated ranges ==  'DANGER'
     '''
+
+    condition = None
 
     if temperature * neutrons_produced_per_second < threshold * 0.4:
         condition = "LOW"
