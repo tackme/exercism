@@ -3,9 +3,6 @@ import random
 
 class Robot:
     def __init__(self):
-        self.generate_name()
-
-    def generate_name(self):
         random.seed()
 
         random_letters = "".join(random.choices(string.ascii_uppercase, k=2))
