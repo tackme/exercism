@@ -9,12 +9,10 @@ def classify(number):
     for i in range(1, int(number**0.5)+1):
         if number % i == 0:
             divisors.append(i)
-            if i**2 == number:
-                continue
             if number // i != number:
                 divisors.append(number//i)
 
-    aliquot_sum = sum(sorted(divisors))
+    aliquot_sum = sum(set(divisors))
 
     if aliquot_sum == number and number != 1:
         return "perfect"
