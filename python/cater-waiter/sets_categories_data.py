@@ -1,10 +1,12 @@
+# pylint: disable=all
+
 VEGAN = {
          'chives', 'nutritional yeast', 'tomato', 'orange zest', 'pareve puff pastry', 'cashews', 'tofu',
          'rice vinegar', 'black pepper', 'cardamom powder', 'mustard seeds', 'parev shortcrust pastry',
          'scallions', 'water', 'chinese eggplants', 'lemon juice', 'smoked paprika', 'cloves', 'basmati rice',
          'cayenne pepper', 'green onions', 'sunflower oil', 'mixed herbs', 'garlic paste', 'parsley',
          'fresh red chili', 'flour', 'garlic', 'oregano', 'green beans', 'harissa', 'brandy', 'fresh basil',
-         'coriander',  'vinegar', 'thyme', 'coriander seeds', 'clove powder', 'pomegranate seeds',
+         'coriander', 'vinegar', 'thyme', 'coriander seeds', 'clove powder', 'pomegranate seeds',
          'sugar', 'yukon gold potato', 'sesame oil', 'cinnamon powder', 'butternut squash', 'allspice powder',
          'red pepper flakes', 'soy sauce', 'sesame seeds', 'cornstarch', 'mango powder', 'vegetable stock',
          'raisins', 'barley malt', 'olive oil', 'ground almonds', 'white rice', 'garlic powder', 'walnuts',
@@ -87,9 +89,9 @@ KETO = {
         'grilled king fish', 'carrot', 'cinnamon sticks', 'heavy cream', 'asparagus', 'nigella seeds',
         'light soy sauce', 'pork belly', 'green chili', 'mangoes', 'red and green thai chili', 'butter',
         'vinegar', 'dill', 'fish sauce', 'white vinegar', 'tomatoes', 'mirin',
-        'avocado mayonnaise', 'turmeric', 'lemon', 'cumin', 'fennel seeds', 'lemon juice',  'salt',
+        'avocado mayonnaise', 'turmeric', 'lemon', 'cumin', 'fennel seeds', 'lemon juice', 'salt',
         'roasted peanuts', 'ginger', 'red onion', 'rosemary', 'cumin powder', 'cashew nuts', 'pecans',
-        'green chili','whole small crimini mushrooms', 'monk fruit', 'sour cream'
+        'green chili', 'whole small crimini mushrooms', 'monk fruit', 'sour cream'
         }
 
 OMNIVORE = {
@@ -118,7 +120,7 @@ OMNIVORE = {
             'chili powder', 'beer', 'carrot'
             }
 
-SPECIAL_INGREDIENTS = {'cream','bacon', 'garlic', 'baby scallops', 'mussels', 'baby squid', 'cashews', 'salmon fillets',
+SPECIAL_INGREDIENTS = {'cream', 'bacon', 'garlic', 'baby scallops', 'mussels', 'baby squid', 'cashews', 'salmon fillets',
                        'filo pastry', 'almonds', 'milk', 'blue cheese', 'clams', 'shrimp', 'tomato puree', 'chocolate',
                        'honey', 'anchovy fillets', 'bulgur', 'prawns', 'parmesan cheese', 'fish', 'shelled large shrimp',
                        'gluten', 'crab legs', 'feta cheese', 'whole-milk yogurt', 'crema', 'firm tofu', 'fish stock',
@@ -134,7 +136,7 @@ SPECIAL_INGREDIENTS = {'cream','bacon', 'garlic', 'baby scallops', 'mussels', 'b
                        }
 
 ALCOHOLS = {"whiskey", "whisky", "white rum", "dark rum", "bourbon", "rye", "scotch", "vodka",
-            "tequila", "gin", "dry vermouth", "sweet vermouth", "prosecco","aperol", "brandy", "mezcal",
+            "tequila", "gin", "dry vermouth", "sweet vermouth", "prosecco", "aperol", "brandy", "mezcal",
             "triple sec", "coffee liqueur", "almond liqueur", "champagne", "orange curacao", "rum"
             }
 

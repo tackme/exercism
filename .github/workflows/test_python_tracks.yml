@@ -27,7 +27,7 @@ jobs:
           pip3 check
       - name: static test
         run: |
-          pylint --ignore-patterns=".*_.*.py" python/**/*.py
+          pylint --ignore-patterns=".*_test.py" python/**/*.py
       - name: test
         run: |
           pytest python/**/*_test.py

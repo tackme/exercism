@@ -1,3 +1,5 @@
+# pylint: disable=all
+
 from sets_categories_data import (VEGAN_INTERSECTIONS,
                                   VEGETARIAN_INTERSECTIONS,
                                   PALEO_INTERSECTIONS,
