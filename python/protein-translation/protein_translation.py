@@ -2,24 +2,15 @@ from enum import Enum
 from more_itertools.more import chunked
 
 
-class Protein(Enum):
-    AUG = "Methionine"
-    UUU = "Phenylalanine"
-    UUC = "Phenylalanine"
-    UUA = "Leucine"
-    UUG = "Leucine"
-    UCU = "Serine"
-    UCC = "Serine"
-    UCA = "Serine"
-    UCG = "Serine"
-    UAU = "Tyrosine"
-    UAC = "Tyrosine"
-    UGU = "Cysteine"
-    UGC = "Cysteine"
-    UGG = "Tryptophan"
-    UAA = "STOP"
-    UAG = "STOP"
-    UGA = "STOP"
+class Codon(Enum):
+    AUG = 'Methionine'
+    UUU = UUC = 'Phenylalanine'
+    UUA = UUG = 'Leucine'
+    UCU = UCC = UCA = UCG = 'Serine'
+    UAU = UAC = 'Tyrosine'
+    UGU = UGC = 'Cysteine'
+    UGG = 'Tryptophan'
+    UAA = UAG = UGA = 'STOP'
 
 def proteins(strand):
     chunked_strand = ["".join(chunk) for chunk in chunked(strand, 3)]
@@ -27,9 +18,9 @@ def proteins(strand):
     result = []
 
     for chunk in chunked_strand:
-        if Protein[chunk].value == "STOP":
+        if Codon[chunk].value == "STOP":
             break
 
-        result.append(Protein[chunk].value)
+        result.append(Codon[chunk].value)
 
     return result
