@@ -28,7 +28,7 @@ jobs:
       - name: static test
         run: |
           pylint --ignore-patterns=".*_test.py" python/**/*.py
-          mypy python/**/*.py
+          mypy --exclude ".*_.*.py" python/**/*.py
       - name: test
         run: |
           pytest python/**/*_test.py
