@@ -1,3 +1,4 @@
+from typing import List
 from enum import Enum
 from more_itertools.more import chunked
 
@@ -12,7 +13,7 @@ class Codon(Enum):
     UGG = 'Tryptophan'
     UAA = UAG = UGA = 'STOP'
 
-def proteins(strand):
+def proteins(strand: str) -> List[str]:
     chunked_strand = ["".join(chunk) for chunk in chunked(strand, 3)]
 
     result = []
