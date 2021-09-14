@@ -1,3 +1,4 @@
+from typing import List, Tuple, Set
 from sets_categories_data import (VEGAN,
                                   VEGETARIAN,
                                   KETO,
@@ -6,7 +7,7 @@ from sets_categories_data import (VEGAN,
                                   SPECIAL_INGREDIENTS)
 
 
-def clean_ingredients(dish_name: str, dish_ingredients: list) -> tuple:
+def clean_ingredients(dish_name: str, dish_ingredients: List[str]) -> Tuple[str, Set[str]]:
     '''
 
     :param dish_name: str
@@ -21,7 +22,7 @@ def clean_ingredients(dish_name: str, dish_ingredients: list) -> tuple:
 
 
 
-def check_drinks(drink_name: str, drink_ingredients: list) -> str:
+def check_drinks(drink_name: str, drink_ingredients: List[str]) -> str:
     '''
 
     :param drink_name: str
@@ -37,7 +38,7 @@ def check_drinks(drink_name: str, drink_ingredients: list) -> str:
 
     return f"{drink_name} Cocktail"
 
-def categorize_dish(dish_name: str, dish_ingredients: list) -> str:
+def categorize_dish(dish_name: str, dish_ingredients: List[str]) -> str:
     '''
 
     :param dish_name: str
@@ -63,7 +64,7 @@ def categorize_dish(dish_name: str, dish_ingredients: list) -> str:
 
     return f"{dish_name}: OMNIVORE"
 
-def tag_special_ingredients(dish: tuple) -> tuple:
+def tag_special_ingredients(dish: Tuple[str, List[str]]) -> Tuple[str, Set[str]]:
     '''
 
     :param dish: tuple of (str of dish name, list of dish ingredients)
@@ -78,7 +79,7 @@ def tag_special_ingredients(dish: tuple) -> tuple:
 
 
 
-def compile_ingredients(dishes: list) -> set:
+def compile_ingredients(dishes: List[Set[str]]) -> Set[str]:
     '''
 
     :param dishes: list of dish ingredient sets
@@ -91,7 +92,7 @@ def compile_ingredients(dishes: list) -> set:
 
 
 
-def separate_appetizers(dishes, appetizers):
+def separate_appetizers(dishes: List[str], appetizers: List[str]) -> List[str]:
     '''
 
     :param dishes: list of dish names
@@ -106,7 +107,7 @@ def separate_appetizers(dishes, appetizers):
 
 
 
-def singleton_ingredients(dishes: list, intersection: set) -> set:
+def singleton_ingredients(dishes: List[Set[str]], intersection: Set[str]) -> Set[str]:
     '''
 
     :param intersection: constant - one of (VEGAN_INTERSECTION,VEGETARIAN_INTERSECTION,PALEO_INTERSECTION,
