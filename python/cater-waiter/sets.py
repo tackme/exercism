@@ -103,7 +103,7 @@ def separate_appetizers(dishes: List[str], appetizers: List[str]) -> List[str]:
     Either list could contain duplicates and may require de-duping.
     '''
 
-    return set(dishes) - set(appetizers)
+    return list(set(dishes) - set(appetizers))
 
 
 
