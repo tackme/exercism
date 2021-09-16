@@ -292,7 +292,7 @@ nondupes = ['Brisket with Grilled Rhubarb, Onions, and Fennel', 'Burnt Masala Wi
 group_1 = [item for item in recipes_with_duplicates if item[0] in dupes]
 group_2 = [(item[1], item[2]) for item in recipes_without_duplicates if item[1] in nondupes]
 
-dishes_to_special_label = sorted(group_1 + group_2)
+dishes_to_special_label = sorted(group_1 + group_2) # type: ignore
 
 dishes_labeled =  [('Baked Kelewele', {'red onion'}),
                    ('Barley Risotto', {'garlic', 'red onion', 'parmesan cheese'}),
