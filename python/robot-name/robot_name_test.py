@@ -8,7 +8,7 @@ class RobotNameTest(unittest.TestCase):
     # assertRegex() alias to address DeprecationWarning
     # assertRegexpMatches got renamed in version 3.2
     if not hasattr(unittest.TestCase, "assertRegex"):
-        assertRegex = unittest.TestCase.assertRegexpMatches
+        assertRegex = unittest.TestCase.assertRegexpMatches # type: ignore
 
     name_re = r'^[A-Z]{2}\d{3}$'
 
