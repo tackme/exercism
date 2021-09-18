@@ -39,14 +39,16 @@ class Proteins(Enum):
     cysteine = Cysteine
     tryptophan = Tryptophan
 
-    @classmethod
-    def from_codon(cls, codon):
-        for i in Proteins:
-            for j in i.value:
-                if codon in j.name:
-                    return type(j).__name__
+    @staticmethod
+    def from_codon(codon):
+        found = None
 
-        return None
+        for protein in Proteins:
+            for strand in protein.value:
+                if codon == strand.name:
+                    found = protein.name.title()
+
+        return found
 
 def proteins(strand: str) -> List[str]:
     chunked_strand = ["".join(chunk) for chunk in chunked(strand, 3)]
