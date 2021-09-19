@@ -47,6 +47,14 @@ class Proteins(Enum):
             for strand in protein.value:
                 if codon == strand.name:
                     found = protein.name.title()
+                    break
+            else:
+                continue
+
+            break
+
+
+
 
         return found
 
