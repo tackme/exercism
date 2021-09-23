@@ -7,8 +7,8 @@ from pythagorean_triplet import (
 # Tests adapted from `problem-specifications//canonical-data.json`
 
 # Python 2/3 compatibility
-if not hasattr(unittest.TestCase, "assertCountEqual"):
-    unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
+# if not hasattr(unittest.TestCase, "assertCountEqual"):
+#     unittest.TestCase.assertCountEqual = unittest.TestCase.assertItemsEqual
 
 
 class PythagoreanTripletTest(unittest.TestCase):
