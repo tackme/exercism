@@ -8,8 +8,8 @@ def saddle_points(matrix: List[List[int]]) -> List[Dict[str, int]]:
         raise ValueError("This is not a matrix")
 
     return [
-        {"row": row_index + 1, "column":colmun_index + 1}
+        {"row": row_index + 1, "column":column_index + 1}
         for row_index, row in enumerate(matrix)
-        for colmun_index, colomn in enumerate(row)
-        if colomn == max(row) and colomn == min(transpose(matrix)[colmun_index])
+        for column_index, element in enumerate(row)
+        if element == max(row) and element == min(transpose(matrix)[column_index])
     ]
